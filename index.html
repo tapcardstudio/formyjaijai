@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#711915">
+    <title>Apology for my Babyboo</title>
+    <style>
+        :root {
+            --wine: #741a18;
+            --deep: #4c0c10;
+            --paper: #ffebbc;
+            --gold: #c59b5c;
+            --ink: #321d16
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            min-height: 100svh;
+            background: radial-gradient(ellipse at 50% 0%, #a33b2b, var(--wine) 55%, var(--deep));
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', serif;
+            overflow-x: hidden
+        }
+
+        body:before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: .1;
+            background: repeating-linear-gradient(45deg, transparent 0 15px, #e5b87a 16px 17px);
+            z-index: -1
+        }
+
+        main {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 38px 18px 65px;
+            gap: 20px
+        }
+
+        .eyebrow {
+            color: #ffe4b2;
+            letter-spacing: .09em;
+            font-size: 13px;
+            text-align: center;
+            margin: 0
+        }
+
+        .card {
+            position: relative;
+            width: min(100%, 420px);
+            padding: 45px 30px 35px;
+            text-align: center;
+            background: linear-gradient(145deg, #fff3d4, #f8dca1);
+            border: 3px solid #d6aa68;
+            border-radius: 14px;
+            box-shadow: 0 16px 0 #4b0b0c55, 0 24px 45px #26050788
+        }
+
+        .card:before,
+        .card:after {
+            content: '❦';
+            position: absolute;
+            color: #b47c43;
+            font-size: 27px;
+            top: 8px
+        }
+
+        .card:before {
+            left: 12px
+        }
+
+        .card:after {
+            right: 12px
+        }
+
+        .heart {
+            font-size: 50px;
+            filter: drop-shadow(0 3px 2px #a0463c55)
+        }
+
+        h1 {
+            font-size: clamp(28px, 6vw, 37px);
+            color: #781b1a;
+            margin: 10px 0 15px
+        }
+
+        .message {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 0 auto 27px;
+            max-width: 310px
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            align-items: center;
+            min-height: 48px
+        }
+
+        button {
+            font: 700 16px Georgia, serif;
+            cursor: pointer;
+            border-radius: 30px;
+            padding: 12px 30px;
+            touch-action: manipulation
+        }
+
+        #yes,
+        .letter-link {
+            background: var(--wine);
+            color: #ffedc7;
+            border: 2px solid #c6955b;
+            box-shadow: 0 4px 0 #4a1010;
+            transition: transform .15s
+        }
+
+        #yes:hover,
+        .letter-link:hover {
+            transform: translateY(-2px)
+        }
+
+        #no {
+            position: fixed;
+            z-index: 10;
+            background: #e3c796;
+            color: #5e2921;
+            border: 2px solid #9d7354;
+            transition: left .2s ease, top .2s ease
+        }
+
+        .success {
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 1.5;
+            color: var(--wine);
+            margin: 22px 0 0;
+            animation: appear .5s ease
+        }
+
+        .letter-link {
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 15px
+        }
+
+        .letter-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            animation: appear .8s ease
+        }
+
+        .letter-intro {
+            color: #ffebc9;
+            text-align: center;
+            font-style: italic;
+            margin: 0 0 15px
+        }
+
+        .scroll {
+            position: relative;
+            width: min(100%, 560px);
+            padding: 75px 35px 80px;
+            background: radial-gradient(ellipse at 50% 45%, #fff0c9 15%, #f6d89c 85%, #e5bd7c);
+            border: 10px solid #eacb90;
+            border-radius: 35px 30px 40px 35px / 20px 25px 30px 35px;
+            box-shadow: inset 0 0 28px #bd8a4b99, 0 20px 45px #23030499;
+            isolation: isolate
+        }
+
+        .scroll:before,
+        .scroll:after {
+            content: '';
+            position: absolute;
+            left: -14px;
+            right: -14px;
+            height: 18px;
+            background: linear-gradient(#ffedc3, #cda46d);
+            border: 2px solid #8e633d;
+            border-radius: 50%;
+            z-index: -1
+        }
+
+        .scroll:before {
+            top: -9px
+        }
+
+        .scroll:after {
+            bottom: -9px
+        }
+
+        .banner {
+            position: relative;
+            z-index: 1;
+            width: calc(100% + 24px);
+            margin: -100px -12px 28px;
+            padding: 20px 10px 15px;
+            background: #ffecc2;
+            border: 3px solid #3c1b14;
+            border-radius: 50% 50% 20% 20% / 18% 18% 25% 25%;
+            box-shadow: 0 7px 0 #b88b58;
+            transform: rotate(-1deg);
+            text-align: center
+        }
+
+        .banner h2 {
+            font-size: clamp(25px, 6vw, 38px);
+            font-weight: normal;
+            color: #20100b;
+            margin: 0
+        }
+
+        .page-number {
+            position: absolute;
+            right: 12px;
+            top: 25px;
+            font-size: 17px
+        }
+
+        .letter-body {
+            white-space: pre-wrap;
+            text-align: center;
+            font-size: clamp(17px, 3.8vw, 21px);
+            line-height: 1.48;
+            margin: 0 0 28px;
+            overflow-wrap: anywhere
+        }
+
+        .signature {
+            text-align: right;
+            font-style: italic;
+            font-size: 20px;
+            margin: 15px 0 0
+        }
+
+        .roses {
+            position: absolute;
+            left: -24px;
+            bottom: -24px;
+            font-size: 65px;
+            letter-spacing: -35px;
+            transform: rotate(-18deg);
+            filter: drop-shadow(2px 4px 3px #3c0d0c77)
+        }
+
+        .ribbon {
+            position: absolute;
+            right: -17px;
+            bottom: -20px;
+            font-size: 95px;
+            transform: rotate(-24deg);
+            filter: drop-shadow(2px 4px 3px #3c0d0c77)
+        }
+
+        .footer {
+            color: #f9dba6;
+            text-align: center;
+            font-size: 13px;
+            margin-top: 25px
+        }
+
+        [hidden] {
+            display: none !important
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(15px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 20;
+            font-size: 24px;
+            animation: floatUp 2s ease-out forwards
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-200px) rotate(20deg);
+                opacity: 0
+            }
+        }
+
+        @media(max-width:480px) {
+            .card {
+                padding: 38px 22px
+            }
+
+            .scroll {
+                padding: 68px 22px 75px;
+                border-width: 7px
+            }
+
+            .banner {
+                margin-top: -88px
+            }
+
+            .roses {
+                font-size: 50px;
+                letter-spacing: -27px
+            }
+
+            .ribbon {
+                font-size: 70px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *:before,
+            *:after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important
+            }
+
+            html {
+                scroll-behavior: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p class="eyebrow">i love youuuu so muchiee misis ko!</p>
+        <section class="card" aria-label="Make up message">
+            <div class="heart" aria-hidden="true">❤️</div>
+            <h1>Bati na tayo?</h1>
+            <p class="message">Sorry na po babyy, wag na po ikaw mag tampooo</p>
+            <div class="actions"><button id="yes" type="button">Yes</button></div>
+            <p id="success" class="success" role="status" hidden>Yay! No choice na ikaww hehe❤️ eme langgg i lovee youuu! </p>
+            <a id="read-letter" class="letter-link" href="#love-letter" hidden>Press this to read my letter 💌</a>
+        </section>
+        <section id="love-letter" class="letter-section" hidden aria-label="Love letter">
+            <p class="letter-intro">Please read this letter my love</p>
+            <article class="scroll">
+                <header class="banner">
+                    <h2></h2><span class="page-number"></span>
+                </header>
+                <p class="letter-body" id="letter-text"> Dear my baby jaijai,
+
+                    Hello babyyyy, mahal ko, misis ko, asawa ko, babyboo, lovelove, baby ganda!!! I know na you’re still mad sakin, but I just want to say sowwy for what I said and did yesterday po. I won’t deny na sobrang mali po ako and na realize ko po na dinagdagan ko pa po yung bigat ng nararamdaman mo. I’m so sorry for not being gentler with your feelings my love, I’m sorry for disappointing you for the nth time babe, I feel so guilty for not treating you the way that you expected and the way I am supposed to po. I won’t force you to be okay po, pero let me do my way of making things up po. 
+
+                    I didn’t mean to offend you po nung sinabi ko po yun kahapon. Still, apologies po kasi it made you feel that way po. I won’t justify what I did kasi nangyari na po yun and hindi na po mababago ang fact na nasaktan ko ikaw. I will take full responsibility for that po and be more careful with my words next time. 
+
+                    Everyday might not be a great day for us po, but please do always remember na you have me always po and always ready to listen and respond sa rants mo. I know I’m not a lot and I’m not perfect po, I commit mistakes and hurt you sometimes, but andito po ako palagi asawa ko. I believe na better days are ahead of us po, and I want to spend those days with you po. 
+
+                    I love you, always. ❤️</p>
+                
+                <p class="signature">-Jethro ❤️</p>
+                <span class="roses" aria-hidden="true">🌹🌹🌹</span><span class="ribbon" aria-hidden="true">🎀</span>
+            </article>
+            <p class="footer">Made with soo much love, just for my baby jaijai ♡</p>
+        </section>
+    </main>
+    <button id="no" type="button" aria-label="No">No</button>
+    <script>
+        const yes = document.getElementById('yes'), no = document.getElementById('no'), success = document.getElementById('success'), card = document.querySelector('.card'), letter = document.getElementById('love-letter'), readLetter = document.getElementById('read-letter'); let accepted = false;
+        function placeNoInitially() { if (accepted) return; const r = card.getBoundingClientRect(); no.style.left = Math.min(innerWidth - no.offsetWidth - 12, r.right - no.offsetWidth - 20) + 'px'; no.style.top = Math.max(12, r.top + 12) + 'px' }
+        function moveNo() { if (accepted) return; const m = 15, w = no.offsetWidth, h = no.offsetHeight, maxX = Math.max(m, innerWidth - w - m), maxY = Math.max(m, innerHeight - h - m), previous = no.getBoundingClientRect(); let x, y; for (let i = 0; i < 20; i++) { x = m + Math.random() * (maxX - m); y = m + Math.random() * (maxY - m); if (Math.hypot(x - previous.left, y - previous.top) > 110) break } no.style.left = x + 'px'; no.style.top = y + 'px' }
+        no.addEventListener('mouseenter', moveNo); no.addEventListener('click', moveNo); no.addEventListener('touchstart', e => { e.preventDefault(); moveNo() }, { passive: false });
+        yes.addEventListener('click', () => { if (accepted) return; accepted = true; yes.textContent = 'Mwaaaa!'; no.hidden = true; success.hidden = false; letter.hidden = false; readLetter.hidden = false; for (let i = 0; i < 20; i++) { const h = document.createElement('span'); h.className = 'floating-heart'; h.textContent = ['❤️', '🌹', '💗'][i % 3]; h.style.left = (10 + Math.random() * 80) + 'vw'; h.style.top = (60 + Math.random() * 30) + 'vh'; h.style.animationDelay = Math.random() * .5 + 's'; document.body.appendChild(h); h.addEventListener('animationend', () => h.remove()) } });
+        window.addEventListener('resize', placeNoInitially); placeNoInitially();
+    </script>
+</body>
+
+</html>
